@@ -197,6 +197,46 @@ public class Square{
     }
   }
 
+  public static void pattern19(int n){
+    int space = 0;
+    for(int i = 1; i <= n; i++){
+      // stars
+      for(int j = 1; j <= n-i+1; j++){
+        System.out.print("*");
+      }
+      // space
+      for(int j = 1; j <= space; j++){
+        System.out.print(" ");
+      }
+      // stars
+      for(int j = 1; j <= n-i+1; j++){
+        System.out.print("*");
+      }
+      space +=2;
+      System.out.println();
+    }
+
+    int sum = 8;
+    for(int i = 1; i <= n; i++){
+      // stars
+      for(int j = 1; j <= i; j++){
+        System.out.print("*");
+      }
+      // space
+      for(int j = 1; j <= sum; j++){
+        System.out.print(" ");
+      }
+      // stars
+      for(int j = 1; j <= i; j++){
+        System.out.print("*");
+      }
+      sum -=2;
+
+      System.out.println();
+    }
+    
+  }
+
   public static void main(String[] args) {
     // int t = 3;
     // int n = 3;
@@ -204,7 +244,7 @@ public class Square{
     //   pattern12(n);
     //   n++;
     // }
-    pattern18(5);
+    pattern19(5);
   }
 
 }
