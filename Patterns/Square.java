@@ -158,6 +158,36 @@ public class Square{
     }
   }
 
+  public static void pattern16(int n){
+    char ch = 'A';
+    for(int i = 1; i <= n; i++){
+      for(int j = 1; j <= i; j++){
+        System.out.print(ch);
+      }
+      System.out.println();
+      ch++;
+    }
+  }
+
+  public static void pattern17(int n){
+    for(int i = 1; i <= n; i++){
+      for(int j = 1; j <= n-i+1; j++){
+        System.out.print(" ");
+      }
+      char ch = 'A';
+      for(int j = 1; j <= i; j++){
+        System.out.print(ch);
+        ch++;
+      }
+      ch--;
+      for(int j = 2; j <= i; j++){
+        ch--;
+        System.out.print(ch);
+      }
+      System.out.println();
+    }
+  }
+
   public static void main(String[] args) {
     // int t = 3;
     // int n = 3;
@@ -165,7 +195,7 @@ public class Square{
     //   pattern12(n);
     //   n++;
     // }
-    pattern15(5);
+    pattern17(5);
   }
 
 }
