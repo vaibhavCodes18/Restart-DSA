@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class CountDigits {
 
   // brute force approach
@@ -45,14 +47,49 @@ public class CountDigits {
     return sum == duplicate;
   }
 
+  public static void printAllDivisors(int n) {
+    for(int i = 1; i <= n; i++){
+      if(n % i == 0){
+        System.out.println(i);
+      }
+    }
+  }
 
   // brute force approach
   public static int countDigitsOptimize(int num) {
     return (int)(Math.log10(num)+1);
   }
 
+  public static void printAllDivisors2(int n) {
+    List<Integer> list = new ArrayList<>();
+    for(int i = 1; i <= (int)Math.sqrt(n); i++){
+      if(n % i == 0){
+        list.add(i);
+        if(n/i != i){
+          list.add(n/i);
+        }
+      }
+    }
+    list.sort(null);
+    System.out.println(list);
+  }
+
+  public static boolean prime(int n) {
+    int count = 0;
+    for(int i = 1; i*i <= n; i++){
+      if(n%i==0){
+        count++;
+        if(n/i != i){
+          count++;
+        }
+      }
+    }
+    if(count == 2) return true;
+    return false;
+  }
+
   public static void main(String[] args) {
-    boolean result = amstrong(1634);
+    boolean result = prime(36);
     System.out.println(result);
   }
 }
