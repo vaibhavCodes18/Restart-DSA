@@ -87,9 +87,19 @@ public class CountDigits {
     if(count == 2) return true;
     return false;
   }
+  public static int gcd(int a,int b)
+	{
+		// Write your code here
+		while(a>0&&b>0){
+			if(a>b) a %= b;
+			else b %= a;
+		}
+		if(a==0) return b;
+		return a;
+	}
 
   public static void main(String[] args) {
-    boolean result = prime(36);
+    int result = gcd(3, 7);
     System.out.println(result);
   }
 }
