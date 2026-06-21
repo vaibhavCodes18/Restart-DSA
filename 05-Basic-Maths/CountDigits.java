@@ -11,9 +11,14 @@ public class CountDigits {
 
     return count;
   }
+  
+  // brute force approach
+  public static int countDigitsOptimize(int num) {
+    return (int)(Math.log10(num)+1);
+  }
 
   public static void main(String[] args) {
-    int result = countDigits(12345);
+    int result = countDigitsOptimize(125);
     System.out.println(result);
   }
 }
