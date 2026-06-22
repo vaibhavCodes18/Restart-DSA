@@ -13,10 +13,16 @@ public class Recursion {
     System.out.println(i);
     printNums(i+1, n);
   }
+
+  public static void printNumsRev(int i, int n) {
+    if(i > n) return;
+    System.out.println(n);
+    printNumsRev(i, n-1);
+  }
   
   public static void main(String[] args) {
     int n = 4;
-    printNums(1,n);
+    printNumsRev(1,n);
   }
 
 }
