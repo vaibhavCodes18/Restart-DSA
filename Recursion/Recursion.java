@@ -56,14 +56,23 @@ public class Recursion {
       end--;
       start++;
     }
-
     printArray(arr);
+  }
+
+  public static void reverseArrayRecursion(int i, int n, int arr[]) {
+    if(i >= n/2) return;
+    int temp = arr[i];
+    arr[i] = arr[n-i-1];
+    arr[n-i-1] = temp;
+    reverseArrayRecursion(i+1, n, arr);
   }
 
   public static void main(String[] args) {
     // int sum = 0, n = 5;
     int[] arr = {12, 34, 5, 6, 4, 7};
-    reverseArray(arr);
+    reverseArrayRecursion(0,arr.length, arr);
+    
+    printArray(arr);
   }
 
 }
