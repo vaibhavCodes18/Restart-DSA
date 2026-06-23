@@ -67,12 +67,17 @@ public class Recursion {
     reverseArrayRecursion(i+1, n, arr);
   }
 
+  public static boolean isPalinfrome(int i, String str) {
+    int n = str.length();
+    if(i >= n/2) return true;
+    if(str.charAt(i) != str.charAt(n-i-1)) return false;
+    return isPalinfrome(i+1,str);
+  }
+
   public static void main(String[] args) {
     // int sum = 0, n = 5;
-    int[] arr = {12, 34, 5, 6, 4, 7};
-    reverseArrayRecursion(0,arr.length, arr);
-    
-    printArray(arr);
+    String str = "MADAM";
+    System.out.println(isPalinfrome(0,  str));
   }
 
 }
