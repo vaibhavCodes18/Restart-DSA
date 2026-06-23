@@ -20,9 +20,30 @@ public class Recursion {
     printNumsRev(i, n-1);
   }
   
+  public static int sumOfNumbersParameterizd(int sum, int n) {
+    if(n < 1) return sum;
+    return sumOfNumbersParameterizd(sum+n,n-1);
+  }
+
+  public static int sumOfNumbersFuntional(int n) {
+    if(n == 0) return 0;
+    return n + sumOfNumbersFuntional(n-1);
+  }
+
+  public static int factOfNumbersFuntional(int n) {
+    if(n == 1) return 1;
+    return n * factOfNumbersFuntional(n-1);
+  }
+
+  public static int factOfNumbersParameterizd(int n, int fact) {
+    if(n == 1) return fact;
+    return factOfNumbersParameterizd(n-1, fact*n);
+  }
+
   public static void main(String[] args) {
-    int n = 4;
-    printNumsRev(1,n);
+    // int sum = 0, n = 5;
+    int result = factOfNumbersParameterizd(4, 1);
+    System.out.println(result);
   }
 
 }
