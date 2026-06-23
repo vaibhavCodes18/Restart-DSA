@@ -74,10 +74,13 @@ public class Recursion {
     return isPalinfrome(i+1,str);
   }
 
+  public static int fibonacci(int n) {
+    if(n <= 1) return n;
+    return fibonacci(n-1) + fibonacci(n-2);
+  }
+
   public static void main(String[] args) {
-    // int sum = 0, n = 5;
-    String str = "MADAM";
-    System.out.println(isPalinfrome(0,  str));
+    System.out.println(fibonacci(3));
   }
 
 }
