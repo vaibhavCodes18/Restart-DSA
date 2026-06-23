@@ -40,10 +40,30 @@ public class Recursion {
     return factOfNumbersParameterizd(n-1, fact*n);
   }
 
+  public static void printArray(int[] arr) {
+    for(int i = 0; i < arr.length; i++){
+      System.out.print(arr[i]+ " ");
+    }
+  }
+
+  public static void reverseArray(int arr[]) {
+    int start = 0;
+    int end = arr.length - 1;
+    while(end > start){
+      int temp = arr[start];
+      arr[start] = arr[end];
+      arr[end] = temp;
+      end--;
+      start++;
+    }
+
+    printArray(arr);
+  }
+
   public static void main(String[] args) {
     // int sum = 0, n = 5;
-    int result = factOfNumbersParameterizd(4, 1);
-    System.out.println(result);
+    int[] arr = {12, 34, 5, 6, 4, 7};
+    reverseArray(arr);
   }
 
 }
