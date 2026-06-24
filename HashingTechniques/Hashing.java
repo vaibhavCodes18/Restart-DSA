@@ -11,9 +11,9 @@ public class Hashing {
 
       //   map.put(i, map.get(i) + 1);
       // }else{
-      //   map.put(i, 0 + 1);
+      //   map.put(i, 1);
       // }
-      
+
       // or else we have another options that is getOrDefault(K,V) with set default value at the time of get element if key not exist
       map.put(i, map.getOrDefault(i, 0) + 1);
     }
