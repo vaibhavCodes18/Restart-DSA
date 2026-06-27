@@ -17,8 +17,18 @@ public class ArraysProblem {
   }
 
   public static int secondLargest(int[] arr){
+    int n = arr.length;
     Arrays.sort(arr);
-    return arr[arr.length - 2];
+
+    int largest = arr[n - 1];
+    for(int i = n - 2; i >= 0; i--){
+      if(largest != arr[i]) {
+        largest = arr[i];
+        break;
+      }
+    }
+
+    return largest;
   }
 
   public static void main(String[] args) {
