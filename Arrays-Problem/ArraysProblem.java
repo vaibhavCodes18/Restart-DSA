@@ -1,4 +1,3 @@
-import java.util.*;
 public class ArraysProblem {
 
   public static int largestElement(int[] arr) {
@@ -18,17 +17,34 @@ public class ArraysProblem {
 
   public static int secondLargest(int[] arr){
     int n = arr.length;
-    Arrays.sort(arr);
 
-    int largest = arr[n - 1];
-    for(int i = n - 2; i >= 0; i--){
-      if(largest != arr[i]) {
+    // Brute force
+    // Arrays.sort(arr);
+
+    // int largest = arr[n - 1];
+    // for(int i = n - 2; i >= 0; i--){
+    //   if(largest != arr[i]) {
+    //     largest = arr[i];
+    //     break;
+    //   }
+    // }
+
+    // Better
+    int largest = arr[0];
+    int slargest = -1;
+    for(int i = 0; i < n; i++){
+      if(arr[i] >= largest){
         largest = arr[i];
-        break;
       }
     }
 
-    return largest;
+    for(int i = 0; i < n; i++){
+      if(arr[i] > slargest && arr[i] != largest){
+        slargest = arr[i];
+      }
+    }
+
+    return slargest;    
   }
 
   public static void main(String[] args) {
