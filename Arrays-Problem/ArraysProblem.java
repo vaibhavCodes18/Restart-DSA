@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class ArraysProblem {
 
   public static int largestElement(int[] arr) {
@@ -16,6 +16,11 @@ public class ArraysProblem {
     return max;
   }
 
+  public static int secondLargest(int[] arr){
+    Arrays.sort(arr);
+    return arr[arr.length - 2];
+  }
+
   public static void main(String[] args) {
     
     int[] arr1 = {1, 2, 3, 8, 8, 1, 5, 6, 5, 6};
@@ -25,7 +30,7 @@ public class ArraysProblem {
     int t = arrays.length;
 
     for(int i = 0; i < t; i++){
-      int res = largestElement(arrays[i]);
+      int res = secondLargest(arrays[i]);
       System.out.println(res);
     }
   }
