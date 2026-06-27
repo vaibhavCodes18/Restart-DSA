@@ -59,16 +59,24 @@ public class ArraysProblem {
     return slargest;    
   }
 
+  public static boolean isSorted(int[] arr) {
+    for(int i = 1; i < arr.length; i++){
+      if(arr[i] >= arr[i-1]){}
+      else return false;
+    }
+    return true;
+  }
+
   public static void main(String[] args) {
     
-    int[] arr1 = {1, 2, 3, 8, 8, 1, 5, 6, 5, 6};
+    int[] arr1 = {1, 2, 3, 4, 5, 6};
     int[] arr2 = {13, 2, 23, 8, 84};
     int[] arr3 = {-1, -23, -3, -82, 0, 1};
     int[][] arrays = {arr1,arr2,arr3};
     int t = arrays.length;
 
     for(int i = 0; i < t; i++){
-      int res = secondLargest(arrays[i]);
+      boolean res = isSorted(arrays[i]);
       System.out.println(res);
     }
   }
