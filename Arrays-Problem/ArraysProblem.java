@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class ArraysProblem {
 
   public static int largestElement(int[] arr) {
@@ -67,6 +69,26 @@ public class ArraysProblem {
     return true;
   }
 
+  public static void removeDuplicated(int[] arr) {
+    Set<Integer> set = new TreeSet<>();
+    for(int i = 0; i < arr.length; i++){
+      set.add(arr[i]);
+    }
+    
+  }
+
+  public static int removeDuplicated(int[] arr, int n) {
+    int i = 0;
+    for(int j = 1; j < n; j++){
+      if(arr[i] != arr[j]){
+        i++;
+        arr[i] = arr[j];
+      }
+    }
+    return i + 1;
+    
+  }
+
   public static void main(String[] args) {
     
     int[] arr1 = {1, 2, 3, 4, 5, 6};
@@ -76,8 +98,11 @@ public class ArraysProblem {
     int t = arrays.length;
 
     for(int i = 0; i < t; i++){
-      boolean res = isSorted(arrays[i]);
-      System.out.println(res);
+      int res = removeDuplicated(arrays[i], arrays[i].length);
+      for(int j = 0; i < res; i++){
+        System.out.println(arrays[i][j] + " ");
+      }
+      System.out.println();
     }
   }
 }
