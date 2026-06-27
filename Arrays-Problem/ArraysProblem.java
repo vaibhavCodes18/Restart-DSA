@@ -92,14 +92,14 @@ public class ArraysProblem {
   public static void main(String[] args) {
     
     int[] arr1 = {1, 2, 3, 4, 5, 6};
-    int[] arr2 = {13, 2, 23, 8, 84};
+    int[] arr2 = {13,2, 2, 23, 8, 84};
     int[] arr3 = {-1, -23, -3, -82, 0, 1};
     int[][] arrays = {arr1,arr2,arr3};
     int t = arrays.length;
 
     for(int i = 0; i < t; i++){
       int res = removeDuplicated(arrays[i], arrays[i].length);
-      for(int j = 0; i < res; i++){
+      for(int j = 0; j < res; j++){
         System.out.println(arrays[i][j] + " ");
       }
       System.out.println();
