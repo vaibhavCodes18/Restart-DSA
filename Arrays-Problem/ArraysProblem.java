@@ -103,6 +103,23 @@ public class ArraysProblem {
     arr[n-1] = temp;
   }
 
+  public static void leftRotationByKth(int[] arr, int n, int k) {
+    k%=n;
+    int[] temp = new int[k];
+
+    for(int i = 0; i < k; i++){
+      temp[i] = arr[i];
+    }
+
+    for(int i = k; i < n; i++){
+      arr[i-k] = arr[i];
+    }
+
+    for(int i = n-k; i < n; i++){
+      arr[i] = temp[i-(n-k)];
+    }
+  }
+
 
   public static void main(String[] args) {
     
@@ -113,7 +130,7 @@ public class ArraysProblem {
     int t = arrays.length;
 
     for(int i = 0; i < t; i++){
-      leftRotationByOne(arrays[i], arrays[i].length);
+      leftRotationByKth(arrays[i], arrays[i].length, 20);
       // print
       printArray(arrays[i], arrays[i].length);
       System.out.println();
