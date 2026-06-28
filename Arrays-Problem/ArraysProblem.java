@@ -139,22 +139,41 @@ public class ArraysProblem {
     }
 
     public static void movezerosAtEnd(int[] arr) {
+        //brute force aproach
         int n = arr.length;
-        List<Integer> temp = new ArrayList<>();
+        // List<Integer> temp = new ArrayList<>();
 
+        // for (int i = 0; i < n; i++) {
+        //     if (arr[i] != 0) {
+        //         temp.add(arr[i]);
+        //     }
+        // }
+        // int m = temp.size();
+        // for (int i = 0; i < m; i++) {
+        //     arr[i] = temp.get(i);
+        // }
+
+        // for (int i = m; i < n; i++) {
+        //     arr[i] = 0;
+        // }
+
+        // optimal approach
+        int j = -1;
         for(int i = 0; i < n; i++){
-          if(arr[i] != 0){
-            temp.add(arr[i]);
+          if(arr[i] == 0){
+            j=i;
+            break;
           }
         }
-        int m = temp.size();
-        for(int i = 0; i < m; i++){
-          arr[i] = temp.get(i);
+        for(int i = j+1; i < n; i++){
+          if(arr[i] != 0){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            j++;
+          }
         }
 
-        for(int i = m; i < n; i++){
-          arr[i] = 0;
-        }
     }
 
     public static void main(String[] args) {
