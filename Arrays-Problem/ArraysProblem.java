@@ -134,6 +134,7 @@ public class ArraysProblem {
 	public static void rotateArray(int[] arr, int k) {
         // Write your code here.
         int n = arr.length;
+        k%=n;
         reverse(arr, 0, k-1);
         reverse(arr, k, n-1);
         reverse(arr, 0, n-1);
@@ -149,7 +150,7 @@ public class ArraysProblem {
     int t = arrays.length;
 
     for(int i = 0; i < t; i++){
-      rotateArray(arrays[i],  2);
+      rotateArray(arrays[i],  20);
       // print
       printArray(arrays[i], arrays[i].length);
       System.out.println();
