@@ -120,6 +120,25 @@ public class ArraysProblem {
     }
   }
 
+  static void reverse(int[] nums, int start, int end){
+        
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+	public static void rotateArray(int[] arr, int k) {
+        // Write your code here.
+        int n = arr.length;
+        reverse(arr, 0, k-1);
+        reverse(arr, k, n-1);
+        reverse(arr, 0, n-1);
+    }
+
 
   public static void main(String[] args) {
     
@@ -130,7 +149,7 @@ public class ArraysProblem {
     int t = arrays.length;
 
     for(int i = 0; i < t; i++){
-      leftRotationByKth(arrays[i], arrays[i].length, 20);
+      rotateArray(arrays[i],  2);
       // print
       printArray(arrays[i], arrays[i].length);
       System.out.println();
