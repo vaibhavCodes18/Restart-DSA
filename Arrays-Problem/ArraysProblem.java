@@ -189,19 +189,29 @@ public class ArraysProblem {
 
     }
 
+    public static int majorityElement(int[] arr, int n) {
+        for(int i = 0; i < n; i++){
+            int freq = 0;
+            for(int j = 0; j < n; j++){
+                if(arr[i] == arr[j]) freq++;
+            }
+            if(freq > n/2) return arr[i];
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
 
-        int[] arr1 = {1, 2, 3, 0, 0, 0, 4, 5, 6};
-        int[] arr2 = {13, 0, 2, 0, 2, 0, 23, 8, 84};
+        int[] arr1 = {0, 0, 3, 0, 0, 0,0, 4, 5, 6};
+        int[] arr2 = {3,2,3};
         int[] arr3 = {-1, 0, -23, 0, 0, -3, -82, 0, 1};
         int[][] arrays = {arr1, arr2, arr3};
         int t = arrays.length;
 
         for (int i = 0; i < t; i++) {
-            int[] arr = twoSumIndices(arrays[i], arrays[i].length, 10);
+            int arr = majorityElement(arrays[i], arrays[i].length);
             // print
-            printArray(arr, arr.length);
-            System.out.println();
+            System.out.println(arr);
         }
     }
 }
