@@ -176,6 +176,19 @@ public class ArraysProblem {
 
     }
 
+    public static int[] twoSumIndices(int[] arr, int n, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < n; i++){
+            int need = target - arr[i];
+            if(map.containsKey(need)){
+                return new int[] { map.get(need), i };
+            }
+            map.put(arr[i], i);
+        }
+        return new int[] {-1,-1};
+
+    }
+
     public static void main(String[] args) {
 
         int[] arr1 = {1, 2, 3, 0, 0, 0, 4, 5, 6};
@@ -185,9 +198,9 @@ public class ArraysProblem {
         int t = arrays.length;
 
         for (int i = 0; i < t; i++) {
-            movezerosAtEnd(arrays[i]);
+            int[] arr = twoSumIndices(arrays[i], arrays[i].length, 10);
             // print
-            printArray(arrays[i], arrays[i].length);
+            printArray(arr, arr.length);
             System.out.println();
         }
     }
