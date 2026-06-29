@@ -202,9 +202,9 @@ public class ArraysProblem {
         for(int el: arr){
             map.put(el, map.getOrDefault(el, 0) + 1);
         }
-        for(Integer i :map.keySet()){
-            if(map.get(i) > n/2){
-                return i;
+        for(Map.Entry<Integer, Integer> i :map.entrySet()){
+            if(i.getValue() > n/2){
+                return i.getKey();
             }
         }
 
