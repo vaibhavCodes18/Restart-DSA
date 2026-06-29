@@ -190,13 +190,24 @@ public class ArraysProblem {
     }
 
     public static int majorityElement(int[] arr, int n) {
-        for(int i = 0; i < n; i++){
-            int freq = 0;
-            for(int j = 0; j < n; j++){
-                if(arr[i] == arr[j]) freq++;
-            }
-            if(freq > n/2) return arr[i];
+        // for(int i = 0; i < n; i++){
+        //     int freq = 0;
+        //     for(int j = 0; j < n; j++){
+        //         if(arr[i] == arr[j]) freq++;
+        //     }
+        //     if(freq > n/2) return arr[i];
+        // }
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int el: arr){
+            map.put(el, map.getOrDefault(el, 0) + 1);
         }
+        for(Integer i :map.keySet()){
+            if(map.get(i) > n/2){
+                return i;
+            }
+        }
+
         return -1;
     }
 
@@ -204,7 +215,7 @@ public class ArraysProblem {
 
         int[] arr1 = {0, 0, 3, 0, 0, 0,0, 4, 5, 6};
         int[] arr2 = {3,2,3};
-        int[] arr3 = {-1, 0, -23, 0, 0, -3, -82, 0, 1};
+        int[] arr3 = {2,2,1,1,1,2,2};
         int[][] arrays = {arr1, arr2, arr3};
         int t = arrays.length;
 
