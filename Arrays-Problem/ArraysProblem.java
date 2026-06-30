@@ -190,6 +190,7 @@ public class ArraysProblem {
     }
 
     public static int majorityElement(int[] arr, int n) {
+        // Brute force
         // for(int i = 0; i < n; i++){
         //     int freq = 0;
         //     for(int j = 0; j < n; j++){
@@ -197,18 +198,42 @@ public class ArraysProblem {
         //     }
         //     if(freq > n/2) return arr[i];
         // }
+        // Better
+        // int freq = 1, ans = arr[0];
+        // Arrays.sort(arr);
+        // for(int i = 1; i < n; i++){
+        //     if(arr[i] == arr[i-1]){
+        //         freq++;
+        //     }else{
+        //         freq = 1;
+        //         ans = arr[i];
+        //     }
+        //     if(freq > n / 2) return ans;
+        // }
+        // return ans;
 
-        Map<Integer, Integer> map = new HashMap<>();
-        for(int el: arr){
-            map.put(el, map.getOrDefault(el, 0) + 1);
-        }
-        for(Map.Entry<Integer, Integer> i :map.entrySet()){
-            if(i.getValue() > n/2){
-                return i.getKey();
+        int freq = 0, ans= 0;
+        for(int i = 0; i < n; i++){
+            if(freq == 0){
+                ans = arr[i];
             }
+            if(ans == arr[i]){
+                freq++;
+            }else freq--;
         }
+        return ans;
 
-        return -1;
+        // Map<Integer, Integer> map = new HashMap<>();
+        // for(int el: arr){
+        //     map.put(el, map.getOrDefault(el, 0) + 1);
+        // }
+        // for(Map.Entry<Integer, Integer> i :map.entrySet()){
+        //     if(i.getValue() > n/2){
+        //         return i.getKey();
+        //     }
+        // }
+
+        // return -1;
     }
 
     public static void main(String[] args) {
