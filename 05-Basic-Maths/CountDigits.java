@@ -97,9 +97,19 @@ public class CountDigits {
 		if(a==0) return b;
 		return a;
 	}
+  public static boolean palindrome(String str){
+    int n = str.length();
+    int low = 0, high = str.length() -1;
+    while(low < n/2){
+      if(str.charAt(low) != str.charAt(high)) return false;
+      low++;
+      high--;
+    }
+    return true;
+  }
 
   public static void main(String[] args) {
-    int result = gcd(3, 7);
-    System.out.println(result);
+    // int result = gcd(3, 7);
+    System.out.println(palindrome("vaiyiav"));
   }
 }

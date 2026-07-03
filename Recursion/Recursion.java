@@ -82,7 +82,7 @@ public class Recursion {
   
 
   public static void main(String[] args) {
-    System.out.println(fibonacci(3));
+    System.out.println(isPalinfrome(0, "vav"));
   }
 
 }
