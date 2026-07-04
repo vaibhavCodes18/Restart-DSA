@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class Duplicate_Number_287 {
 
   public static int duplicateElementBruteForce(int[] arr, int n) {
@@ -7,7 +10,16 @@ public class Duplicate_Number_287 {
         if(i != j && num == arr[j]) return num;
       }
     }
-    return 0;
+    return -1;
+  }
+
+  public static int duplicateElementBetterForce(int[] arr, int n) {
+    Set<Integer> s = new HashSet<>();
+    for(int i : arr){
+      if(s.contains(i)) return i;
+      s.add(i);
+    }
+    return -1;
   }
 
   public static void main(String[] args) {
@@ -18,7 +30,7 @@ public class Duplicate_Number_287 {
         int t = arrays.length;
 
         for (int i = 0; i < t; i++) {
-            int arr = duplicateElementBruteForce(arrays[i], arrays[i].length);
+            int arr = duplicateElementBetterForce(arrays[i], arrays[i].length);
             // print
             System.out.println(arr);
         }
