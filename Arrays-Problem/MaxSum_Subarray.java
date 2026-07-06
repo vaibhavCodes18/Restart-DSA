@@ -30,13 +30,24 @@ public class MaxSum_Subarray{
     System.out.println(max);
   }
   
+  public static void subarrayOptimalForce(int[] arr, int n){
+    int max = Integer.MIN_VALUE;
+    int sum = 0;
+    for(int i = 0; i < n; i++){
+      sum += arr[i];
+      if(sum > max) max = sum;
+      if(sum < 0) sum = 0;
+    }
+    System.out.println(max);
+  }
+
   public static void main(String[] args) {
     // int[] arr1 = {0, 1};
         // int[] arr2 = {9, 6, 4, 2, 3, 5, 7, 0, 1};
         int[] arr3 = {3, 0, 1};
         // int[][] arrays = {arr1, arr2, arr3};
         // int t = arrays.length;
-        subarrayBetterForce(arr3, arr3.length);
+        subarrayOptimalForce(arr3, arr3.length);
         // for (int i = 0; i < t; i++) {
         //     subarrayBruteForce(arrays[i], arrays[i].length);
         //     // print
