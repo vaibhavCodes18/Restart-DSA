@@ -87,6 +87,15 @@ public class CountDigits {
     if(count == 2) return true;
     return false;
   }
+  public static boolean prime2(int n) {
+    // int count = 0;
+    for(int i = 2; i < n; i++){
+      if(n%i==0){
+        return false;
+      }
+    }
+    return true;
+  }
   public static int gcd(int a,int b)
 	{
 		// Write your code here
@@ -110,6 +119,8 @@ public class CountDigits {
 
   public static void main(String[] args) {
     // int result = gcd(3, 7);
-    System.out.println(palindrome("vaiyiav"));
+    int n = 4;
+    System.out.println(prime(n));
+    System.out.println(prime2(n));
   }
 }
